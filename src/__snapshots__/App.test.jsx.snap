@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App component > renders All Micght 1`] = `
+<div>
+  <h1>
+    All Might
+  </h1>
+  <button>
+    change hero
+  </button>
+</div>
+`;
+
+exports[`App component > renders All Might 1`] = `
+<div>
+  <h1>
+    All Might
+  </h1>
+  <button>
+    Change Hero
+  </button>
+</div>
+`;
+
+exports[`App component > renders magnificent monkeys 1`] = `
+<div>
+  <h1>
+    All Might
+  </h1>
+  <button>
+    Change Hero
+  </button>
+</div>
+`;
