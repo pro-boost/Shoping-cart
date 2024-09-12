@@ -1,11 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import Router from "./Router/Routes.jsx";
+import { BrowserRouter } from "react-router-dom"; // Use BrowserRouter
+import App from "./App"; // Import your App component directly
 
-<Router />;
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={Router} />
+    <BrowserRouter basename="/Shoping-cart">
+      <App /> {/* Now App handles all routes */}
+    </BrowserRouter>
   </StrictMode>
 );
