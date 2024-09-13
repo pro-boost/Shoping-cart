@@ -1,0 +1,64 @@
+.homepage-container {
+  padding: 2rem 1.5rem;
+  background-color: #f8f9fa; /* Match the navbar background */
+  color: #343a40;
+  font-family: Arial, sans-serif;
+  padding: 0.5rem 1rem;
+}
+
+.homepage-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #000; /* Match the navbar link color */
+}
+
+.homepage-container h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  color: #000;
+}
+
+.homepage-container p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #555; /* Softer color for readability */
+}
+
+.homepage-container ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.homepage-container li {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #343a40; /* Match body text */
+}
+
+.homepage-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.homepage-container a:hover {
+  text-decoration: underline;
+}
+
+.homepage-container button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.homepage-container button:hover {
+  background-color: #0056b3;
+}

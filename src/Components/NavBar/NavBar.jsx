@@ -1,16 +1,43 @@
-import { Link } from "react-router-dom";
-import "./NavBar.css";
+import { Link, useLocation } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import "./NavBar.css"; // Ensure this file is correctly imported
 
 function NavBar() {
+  const location = useLocation();
+
   return (
-    <div className="navbar">
-      <div className="logo">logo</div>
-      <div className="menu">
-        <Link to="/">Home</Link>
-        <Link to="/store">Store</Link>
-        <Link to="/cart">Cart</Link>
-      </div>
-    </div>
+    <Navbar expand="lg" bg="light" variant="light" className="custom-navbar">
+      <Container>
+        <Navbar.Brand as={Link} to="/" className="me-auto">
+          MyApp
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link
+              as={Link}
+              to="/"
+              className={location.pathname === "/" ? "active-link" : ""}>
+              Home
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/store"
+              className={location.pathname === "/store" ? "active-link" : ""}>
+              Store
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/cart"
+              className={location.pathname === "/cart" ? "active-link" : ""}>
+              Cart
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
