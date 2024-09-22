@@ -1,10 +1,10 @@
 .store-container {
-  margin: 50px auto; /* Center container horizontally */
+  margin: 50px auto;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; /* Space between cards */
-  justify-content: center; /* Center cards horizontally */
+  gap: 30px;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

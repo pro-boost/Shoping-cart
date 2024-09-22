@@ -1,0 +1,37 @@
+.custom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  margin-top: 10px;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: #000;
+  font-weight: 500;
+  font-size: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.nav-link.active-link {
+  color: #000;
+  font-weight: 700;
+}

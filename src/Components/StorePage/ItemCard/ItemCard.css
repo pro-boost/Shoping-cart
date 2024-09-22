@@ -40,11 +40,11 @@
   max-height: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: max-height 0.3s ease; /* Smooth transition for expanding text */
+  transition: max-height 0.3s ease;
 }
 
 .item-info.expanded p {
-  max-height: none; /* Allow full text to be visible */
+  max-height: none;
 }
 
 .item-button {
