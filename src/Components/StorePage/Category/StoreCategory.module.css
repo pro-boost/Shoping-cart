@@ -1,0 +1,62 @@
+.collection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  padding: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  gap: 8rem;
+}
+
+.categoryLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 2rem 0;
+  font-weight: 500;
+  font-size: 1.75rem;
+  color: black;
+  background: none;
+  text-decoration: none;
+  border: none;
+  transition: transform 0.2s;
+}
+
+.categoryLink {
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 1rem 0;
+}
+.categoryLink:hover {
+  transform: scale(1.25);
+}
+
+.categoryImg {
+  width: 22rem;
+  height: 22rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryImg img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin-top: 0.5rem;
+}

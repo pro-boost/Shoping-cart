@@ -1,11 +1,11 @@
-import ItemCard from "./ItemCard/ItemCard";
+import ItemCard from "../ItemCard/ItemCard";
 import { useEffect, useState } from "react";
-import "./StorePage.css";
-import TypeNav from "./TypeNav/TypeNav";
+import { useParams } from "react-router-dom";
+import "./ItemPage.modules.css";
 
-function StorePage() {
+function ItemPage() {
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState("men's clothing");
+  const { category } = useParams();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -15,9 +15,6 @@ function StorePage() {
 
   return (
     <>
-      <div className="typeNav">
-        <TypeNav category={category} setCategory={setCategory} />
-      </div>
       <div className="store-container">
         {products
           .filter((product) => product.category === category)
@@ -35,4 +32,4 @@ function StorePage() {
   );
 }
 
-export default StorePage;
+export default ItemPage;

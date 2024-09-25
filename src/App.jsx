@@ -2,7 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar/NavBar.jsx";
 import HomePage from "./Components/HomePage/HomePage.jsx";
 import CartPage from "./Components/CartPage/CartPage.jsx";
-import StorePage from "./Components/StorePage/StorePage.jsx";
+import StorePage from "./Components/StorePage/StorePage/StorePage.jsx";
+import ItemPage from "./Components/StorePage/ItemPage/ItemPage.jsx";
 import NotFoundPage from "./Router/NotFoundPage.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="store" element={<StorePage />} />
+          <Route path="store/:category" element={<ItemPage />} />{" "}
           <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
