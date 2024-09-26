@@ -1,25 +1,15 @@
-import { useState } from "react";
-import "./ItemCard.css";
+import { Link } from "react-router-dom";
+import styles from "./ItemCard.module.css";
 
-function ItemCard({ imgSrc, title, description, price }) {
-  const [isReadMore, setIsReadMore] = useState(false);
-
-  const toggleReadMore = () => {
-    setIsReadMore(!isReadMore);
-  };
-
+function ItemCard({ imgSrc, title, price, id, category }) {
   return (
-    <div className="card-container">
-      <img src={imgSrc} alt={title} />
-      <h1 className="item-title">{title}</h1>
-      <div className={`item-info ${isReadMore ? "expanded" : ""}`}>
-        <p>{description}</p>
-        <button className="read-more" onClick={toggleReadMore}>
-          {isReadMore ? "Read Less" : "Read More"}
-        </button>
+    <div className={styles.cardContainer}>
+      <Link className={styles.linkContainer} to={`/store/${category}/${id}`}>
+        <img src={imgSrc} alt={title} />
+        <h1 className={styles.itemTitle}>{title}</h1>
         <p>{price} $</p>
-        <button className="item-button">Add to Cart</button>
-      </div>
+      </Link>
+      <button className={styles.itemButton}>Add to Cart</button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import ItemCard from "../ItemCard/ItemCard";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./ItemPage.modules.css";
+import styles from "./ItemPage.module.css";
 
 function ItemPage() {
   const [products, setProducts] = useState([]);
@@ -15,7 +15,8 @@ function ItemPage() {
 
   return (
     <>
-      <div className="store-container">
+      <div className={styles.itemsContainer}>
+        <h1>{category}</h1>
         {products
           .filter((product) => product.category === category)
           .map((product) => (
@@ -23,8 +24,9 @@ function ItemPage() {
               key={product.id}
               imgSrc={product.image}
               title={product.title}
-              description={product.description}
               price={product.price}
+              id={product.id} // Pass the product ID
+              category={category} // Pass the category
             />
           ))}
       </div>

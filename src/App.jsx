@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="store" element={<StorePage />} />
-          <Route path="store/:category" element={<ItemPage />} />{" "}
+          <Route path="store/:category" element={<ItemPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
