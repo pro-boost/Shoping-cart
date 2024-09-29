@@ -1,7 +1,7 @@
-import ItemCard from "../ItemCard/ItemCard";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./ItemPage.module.css";
+import { Link } from "react-router-dom";
 
 function ItemPage() {
   const [products, setProducts] = useState([]);
@@ -20,14 +20,16 @@ function ItemPage() {
         {products
           .filter((product) => product.category === category)
           .map((product) => (
-            <ItemCard
-              key={product.id}
-              imgSrc={product.image}
-              title={product.title}
-              price={product.price}
-              id={product.id} // Pass the product ID
-              category={category} // Pass the category
-            />
+            <div key={product.id} className={styles.cardContainer}>
+              <Link
+                className={styles.linkContainer}
+                to={`/store/${category}/${product.id}`}>
+                <img src={product.image} alt={product.title} />
+                <h1 className={styles.itemTitle}>{product.title}</h1>
+                <p>{product.price} $</p>
+              </Link>
+              <button className={styles.itemButton}>Add to Cart</button>
+            </div>
           ))}
       </div>
     </>
