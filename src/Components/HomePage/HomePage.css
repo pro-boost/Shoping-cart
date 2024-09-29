@@ -1,17 +1,21 @@
 .homepage-container {
   padding: 2rem 1.5rem;
-  background-color: #f8f9fa; /* Match the navbar background */
   color: #343a40;
   font-family: Arial, sans-serif;
   padding: 0.5rem 1rem;
   height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .homepage-container h1 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #000; /* Match the navbar link color */
+  color: #000;
 }
 
 .homepage-container h2 {
@@ -25,7 +29,7 @@
   font-size: 1.15rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  color: #555; /* Softer color for readability */
+  color: #555;
 }
 
 .homepage-container ul {

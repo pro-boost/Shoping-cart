@@ -8,16 +8,29 @@ import ItemCard from "./Components/StorePage/ItemCard/ItemCard.jsx";
 import NotFoundPage from "./Router/NotFoundPage.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 import styles from "./App.module.css";
+import { useState } from "react";
 function App() {
+  const [count, setCount] = useState(0);
+  const handleClick = () => {
+    setCount(count + 1);
+  };
   return (
     <div>
-      <NavBar />
+      <div className={styles.navBar}>
+        <NavBar count={count} />
+      </div>
       <div className={styles.routes}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="store" element={<StorePage />} />
-          <Route path="store/:category" element={<ItemPage />} />
-          <Route path="store/:category/:id" element={<ItemCard />} />
+          <Route
+            path="store/:category"
+            element={<ItemPage handleClick={handleClick} />}
+          />
+          <Route
+            path="store/:category/:id"
+            element={<ItemCard handleClick={handleClick} />}
+          />
           <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

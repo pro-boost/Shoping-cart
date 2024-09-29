@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./NavBar.css"; // Ensure this file is correctly imported
 
-function NavBar() {
+function NavBar({ count }) {
   const location = useLocation();
 
   return (
@@ -37,7 +37,7 @@ function NavBar() {
               as={Link}
               to="/cart"
               className={location.pathname === "/cart" ? "active-link" : ""}>
-              Cart
+              Cart {count}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

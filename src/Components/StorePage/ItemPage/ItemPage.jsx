@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import styles from "./ItemPage.module.css";
 import { Link } from "react-router-dom";
 
-function ItemPage() {
+function ItemPage({ handleClick }) {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
 
@@ -13,6 +13,7 @@ function ItemPage() {
       .then((data) => setProducts(data));
   }, []);
   if (!products) return <p>Loading...</p>;
+
   return (
     <>
       <div className={styles.itemsContainer}>
@@ -28,7 +29,9 @@ function ItemPage() {
                 <h1 className={styles.itemTitle}>{product.title}</h1>
                 <p>{product.price} $</p>
               </Link>
-              <button className={styles.itemButton}>Add to Cart</button>
+              <button onClick={handleClick} className={styles.itemButton}>
+                Add to Cart
+              </button>
             </div>
           ))}
       </div>

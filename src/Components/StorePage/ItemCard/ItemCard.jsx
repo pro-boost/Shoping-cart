@@ -2,19 +2,20 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./ItemCard.module.css";
 
-function ItemCard() {
+function ItemCard({ handleClick }) {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState(null); // Initialize to null
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
-        const foundIproduct = data.find((item) => item.id === parseInt(id));
-        setProduct(foundIproduct);
+        const foundProduct = data.find((item) => item.id === parseInt(id));
+        setProduct(foundProduct);
       });
   }, [id]);
-  if (!product) return <p>Loading...</p>;
+
+  if (!product) return <p>Loading...</p>; // Check if product is null
 
   return (
     <div className={styles.itemCardContainer}>
@@ -25,11 +26,14 @@ function ItemCard() {
         </div>
         <div className={styles.detailsRight}>
           <p>{product.description}</p>
-          <p>{product.price} $</p>
-          <button className={styles.itemButton}>Add to Cart</button>
+          <p className={styles.price}>{product.price} $</p>
+          <button onClick={handleClick} className={styles.itemButton}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
   );
 }
+
 export default ItemCard;
