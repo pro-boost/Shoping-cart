@@ -25,7 +25,12 @@ function NavBar() {
             <Nav.Link
               as={Link}
               to="/store"
-              className={location.pathname === "/store" ? "active-link" : ""}>
+              className={
+                location.pathname === "/store" ||
+                location.pathname.startsWith("/store/")
+                  ? "active-link"
+                  : ""
+              }>
               Store
             </Nav.Link>
             <Nav.Link
