@@ -1,39 +1,47 @@
-.cardContainer {
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+.itemCardContainer {
+  width: 60%;
+  height: 100vh;
   overflow: hidden;
-  width: 350px;
-  min-height: 450px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
-  margin-bottom: 40px;
+  align-items: center;
 }
-
-.linkContainer {
-  text-decoration: none;
+.productDetails {
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
+  height: 70vh;
 }
 
-.cardContainer img {
-  width: 100%;
-  height: 500px;
+.detailsLeft img {
+  width: 50%;
+  max-height: 50%;
+}
+
+.detailsLeft {
+  width: 50%;
+  display: flex;
+  justify-content: center;
   object-fit: contain;
 }
-
-.itemTitle {
-  font-size: 1.25rem;
+.itemCardContainer h1 {
+  font-size: 2rem;
   text-align: center;
   color: black;
-  overflow: hidden;
-  white-space: nowrap; /* Prevent wrapping */
-  text-overflow: ellipsis; /* Show ellipsis */
-  width: 300px; /* Take full width of the container */
+  width: 100%;
 }
 
+.detailsRight {
+  width: 50%;
+}
 .itemButton {
   margin-top: auto;
   font-size: 1rem;
@@ -43,6 +51,7 @@
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
+  padding: 5px 10px;
 }
 
 .itemButton:hover {

@@ -7,12 +7,12 @@ import ItemPage from "./Components/StorePage/ItemPage/ItemPage.jsx";
 import ItemCard from "./Components/StorePage/ItemCard/ItemCard.jsx";
 import NotFoundPage from "./Router/NotFoundPage.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
-
+import styles from "./App.module.css";
 function App() {
   return (
     <div>
       <NavBar />
-      <div className="routes">
+      <div className={styles.routes}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="store" element={<StorePage />} />

@@ -17,12 +17,18 @@ function ItemCard() {
   if (!product) return <p>Loading...</p>;
 
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.itemCardContainer}>
       <h1>{product.title}</h1>
-      <p>{product.description}</p>
-      <img src={product.image} alt={product.title} />
-      <p>{product.price} $</p>
-      <button className={styles.itemButton}>Add to Cart</button>
+      <div className={styles.productDetails}>
+        <div className={styles.detailsLeft}>
+          <img src={product.image} alt={product.title} />
+        </div>
+        <div className={styles.detailsRight}>
+          <p>{product.description}</p>
+          <p>{product.price} $</p>
+          <button className={styles.itemButton}>Add to Cart</button>
+        </div>
+      </div>
     </div>
   );
 }
