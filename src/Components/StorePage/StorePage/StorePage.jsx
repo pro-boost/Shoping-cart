@@ -1,10 +1,10 @@
-import "./StorePage.css";
+import styles from "./StorePage.module.css";
 import StoreCategory from "../Category/StoreCategory";
 
 function StorePage() {
   return (
     <>
-      <div className="typeNav">
+      <div className={styles.typeNav}>
         <StoreCategory />
       </div>
     </>

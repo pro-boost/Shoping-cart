@@ -12,7 +12,7 @@ function ItemPage() {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-
+  if (!products) return <p>Loading...</p>;
   return (
     <>
       <div className={styles.itemsContainer}>
