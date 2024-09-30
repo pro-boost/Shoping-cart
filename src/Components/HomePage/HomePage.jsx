@@ -1,7 +1,7 @@
-import "./HomePage.css";
+import styles from "./HomePage.module.css";
 function HomePage() {
   return (
-    <div className="homepage-container">
+    <div className={styles.homepageContainer}>
       <h1>Welcome to Our Online Store</h1>
       <p>
         Discover a world of amazing products, handpicked just for you. Whether

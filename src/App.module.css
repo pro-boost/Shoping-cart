@@ -1,18 +1,26 @@
+:root {
+  --navbar-height: 80px;
+}
+
 html,
 body {
   height: 100vh;
   margin: 0;
 }
-.routes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .navBar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: var(--navbar-height);
   z-index: 1000;
   box-shadow: inset;
+}
+
+.routes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: calc(var(--navbar-height));
 }

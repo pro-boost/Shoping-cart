@@ -1,10 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "./NavBar.css"; // Ensure this file is correctly imported
+import { ShopContext } from "../../ShopContext";
+import "./NavBar.css";
 
-function NavBar({ count }) {
+function NavBar() {
+  const { count } = useContext(ShopContext);
   const location = useLocation();
 
   return (

@@ -15,7 +15,7 @@ function ItemCard({ handleClick }) {
       });
   }, [id]);
 
-  if (!product) return <p>Loading...</p>; // Check if product is null
+  if (!product) return <p>Loading...</p>;
 
   return (
     <div className={styles.itemCardContainer}>
