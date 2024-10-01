@@ -5,15 +5,14 @@ import styles from "./ItemCard.module.css";
 
 function ItemCard() {
   const { id } = useParams();
-  const { products, setProduct, handleClick } = useContext(ShopContext);
+  const { product, products, setProduct, handleClick } =
+    useContext(ShopContext);
 
   useEffect(() => {
     const productId = parseInt(id);
     const foundProduct = products.find((item) => item.id === productId);
     setProduct(foundProduct);
   }, [id, products, setProduct]);
-
-  const { product } = useContext(ShopContext);
 
   if (!product) return <p>Loading product...</p>;
 
@@ -27,7 +26,9 @@ function ItemCard() {
         <div className={styles.detailsRight}>
           <p>{product.description}</p>
           <p className={styles.price}>{product.price} $</p>
-          <button onClick={handleClick} className={styles.itemButton}>
+          <button
+            onClick={() => handleClick(product)}
+            className={styles.itemButton}>
             Add to Cart
           </button>
         </div>

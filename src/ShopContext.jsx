@@ -7,8 +7,10 @@ export const MyProvider = ({ children }) => {
   const [isEmpty, setIsEmpty] = useState(true);
   const [product, setProduct] = useState(null);
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
-  const handleClick = () => {
+  const handleClick = (productToAdd) => {
+    setCart((prevCart) => [...prevCart, productToAdd]); // Add specific product to cart
     setCount(count + 1);
     setIsEmpty(false);
   };
@@ -37,6 +39,8 @@ export const MyProvider = ({ children }) => {
         count,
         isEmpty,
         handleClick,
+        cart,
+        setCart,
       }}>
       {children}
     </ShopContext.Provider>
