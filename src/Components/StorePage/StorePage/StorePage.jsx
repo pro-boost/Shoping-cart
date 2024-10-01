@@ -1,15 +1,10 @@
 import styles from "./StorePage.module.css";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { ShopContext } from "../../../ShopContext";
+import { useContext } from "react";
 
 function StorePage() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  const { products } = useContext(ShopContext);
 
   return (
     <nav className={styles.collection}>

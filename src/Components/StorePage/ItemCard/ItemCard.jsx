@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { ShopContext } from "../../../ShopContext";
 import styles from "./ItemCard.module.css";
 
-function ItemCard({ handleClick }) {
+function ItemCard() {
   const { id } = useParams();
-  const [product, setProduct] = useState(null); // Initialize to null
+  const { products, setProduct, handleClick } = useContext(ShopContext);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        const foundProduct = data.find((item) => item.id === parseInt(id));
-        setProduct(foundProduct);
-      });
-  }, [id]);
+    const productId = parseInt(id);
+    const foundProduct = products.find((item) => item.id === productId);
+    setProduct(foundProduct);
+  }, [id, products, setProduct]);
 
-  if (!product) return <p>Loading...</p>;
+  const { product } = useContext(ShopContext);
+
+  if (!product) return <p>Loading product...</p>;
 
   return (
     <div className={styles.itemCardContainer}>

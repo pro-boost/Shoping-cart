@@ -7,8 +7,8 @@ import ItemPage from "./Components/StorePage/ItemPage/ItemPage.jsx";
 import ItemCard from "./Components/StorePage/ItemCard/ItemCard.jsx";
 import NotFoundPage from "./Router/NotFoundPage.jsx";
 import { ShopContext } from "./ShopContext.jsx";
-import { useContext } from "react";
 import styles from "./App.module.css";
+import { useContext } from "react";
 
 function RoutesWrapper() {
   const { isEmpty } = useContext(ShopContext);
