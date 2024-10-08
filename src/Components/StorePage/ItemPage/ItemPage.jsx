@@ -24,7 +24,7 @@ function ItemPage() {
               <p>{product.price} $</p>
             </Link>
             <button
-              onClick={() => handleClick(product)} // Pass the specific product here
+              onClick={() => handleClick(product)}
               className={styles.itemButton}>
               Add to Cart
             </button>

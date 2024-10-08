@@ -1,64 +1,108 @@
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
-.itemCardContainer {
-  width: 50%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.productDetails {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  gap: 10px;
+:root {
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --font-size-large: 2rem;
+  --font-size-medium: 1.4rem;
+  --font-size-small: 1.2rem;
 }
 
-.detailsLeft img {
-  width: 80%;
-  object-fit: contain;
+.itemCardContainer {
+  width: 60%;
+}
+
+.productDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
 }
 
 .detailsLeft {
-  width: 50%;
   display: flex;
   justify-content: center;
   overflow: hidden;
 }
+
+.detailsLeft img {
+  object-fit: contain;
+  width: 60%;
+}
+
 .itemCardContainer h1 {
-  font-size: 2rem;
-  text-align: start;
+  font-size: var(--font-size-large);
+  text-align: end;
   width: 100%;
-  text-align: justify;
+  margin: 0;
+  padding: 0;
 }
 
 .detailsRight {
-  width: 50%;
-  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  height: 100%;
+  font-size: var(--font-size-small);
   text-align: justify;
 }
+
 .detailsRight .price {
-  font-size: 2rem;
+  font-size: var(--font-size-large);
 }
+
 .itemButton {
   margin-top: auto;
-  font-size: 1.4rem;
+  padding: 5px 10px;
+  font-size: var(--font-size-medium);
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
-  padding: 5px 10px;
+  width: fit-content;
 }
 
 .itemButton:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-color-hover);
+}
+
+@media (max-width: 768px) {
+  .itemCardContainer {
+    width: 90%;
+  }
+
+  .productDetails {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .detailsRight {
+    width: 100%;
+    font-size: var(--font-size-small);
+    text-align: justify;
+  }
+
+  .detailsRight h1 {
+    font-size: var(--font-size-medium);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .detailsRight .price {
+    font-size: var(--font-size-medium);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .itemButton {
+    margin: 20px auto 0;
+    margin-bottom: 30px;
+  }
+}
+
+.itemButton:focus {
+  outline: 2px solid var(--primary-color-hover);
+  outline-offset: 2px;
 }

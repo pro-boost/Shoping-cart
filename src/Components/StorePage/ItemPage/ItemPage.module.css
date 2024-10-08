@@ -1,6 +1,4 @@
 .itemsContainer {
-  margin: 50px auto;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +13,7 @@ h1::first-letter {
 .cardContainer {
   overflow: hidden;
   width: 350px;
-  min-height: 450px;
+  max-height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +32,7 @@ h1::first-letter {
 
 .cardContainer img {
   width: 100%;
-  height: 500px;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -50,7 +48,8 @@ h1::first-letter {
 
 .itemButton {
   margin-top: auto;
-  font-size: 1rem;
+  padding: 5px 10px;
+  font-size: 1.2rem;
   border: none;
   border-radius: 5px;
   background-color: #007bff;
@@ -65,7 +64,13 @@ h1::first-letter {
 
 @media (max-width: 768px) {
   .itemsContainer {
-    padding: 10px;
-    gap: 20px;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .cardContainer img {
+    width: 100%;
+    max-height: 25rem;
+    object-fit: contain;
   }
 }

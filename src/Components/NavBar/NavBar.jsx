@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -9,25 +9,43 @@ import "./NavBar.css";
 function NavBar() {
   const { count } = useContext(ShopContext);
   const location = useLocation();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleToggle = () => setExpanded(!expanded);
+  const handleLinkClick = () => setExpanded(false);
 
   return (
-    <Navbar expand="lg" bg="light" variant="light" className="custom-navbar">
+    <Navbar
+      expand="lg"
+      bg="light"
+      variant="light"
+      className="custom-navbar"
+      expanded={expanded}>
       <Container>
-        <Navbar.Brand as={Link} to="/" className="me-auto">
-          MyApp
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="me-auto"
+          onClick={handleLinkClick}>
+          ProBoost
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          onClick={handleToggle}
+          aria-controls="basic-navbar-nav"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link
               as={Link}
               to="/"
+              onClick={handleLinkClick}
               className={location.pathname === "/" ? "active-link" : ""}>
               Home
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/store"
+              onClick={handleLinkClick}
               className={
                 location.pathname === "/store" ||
                 location.pathname.startsWith("/store/")
@@ -39,6 +57,7 @@ function NavBar() {
             <Nav.Link
               as={Link}
               to="/cart"
+              onClick={handleLinkClick}
               className={location.pathname === "/cart" ? "active-link" : ""}>
               Cart {count}
             </Nav.Link>

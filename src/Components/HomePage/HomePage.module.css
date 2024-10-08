@@ -1,14 +1,15 @@
 .homepageContainer {
-  padding: 2rem 1.5rem;
   color: #343a40;
   font-family: Arial, sans-serif;
   padding: 0.5rem 1rem;
-  height: 100vh;
+  height: 100%;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .homepageContainer h1 {
@@ -16,6 +17,7 @@
   font-weight: bold;
   margin-bottom: 1rem;
   color: #000;
+  text-align: center;
 }
 
 .homepageContainer h2 {
@@ -30,6 +32,7 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
   color: #555;
+  text-align: justify;
 }
 
 .homepageContainer ul {
@@ -41,7 +44,7 @@
 .homepageContainer li {
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
-  color: #343a40; /* Match body text */
+  color: #343a40;
 }
 
 .homepageContainer a {
@@ -62,8 +65,36 @@
   font-weight: 600;
   cursor: pointer;
   margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
 }
 
 .homepageContainer button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .homepageContainer {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .homepageContainer h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 6rem;
+  }
+
+  .homepageContainer h2 {
+    font-size: 1.5rem;
+  }
+
+  .homepageContainer p,
+  .homepageContainer li {
+    font-size: 1rem;
+  }
+
+  .homepageContainer button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }

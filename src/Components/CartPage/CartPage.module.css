@@ -1,69 +1,157 @@
-.itemCardContainer {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 10px 0;
-  display: flex;
-  flex-direction: column;
-  background-color: #f9f9f9;
+:root {
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --danger-color: rgb(220, 38, 38);
+  --danger-hover-color: rgb(193, 3, 3);
+  --success-color: #28a745;
+  --success-hover-color: #218838;
+  --font-size-large: 1.8rem;
+  --font-size-medium: 1rem;
+  --font-size-small: 20px;
 }
 
-.productDetails {
+html {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit; /* Apply box-sizing globally */
+}
+
+.cart {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.itemCardContainer {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 50vw;
+  width: 100%;
+}
+
+.detailsLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .detailsLeft img {
-  max-width: 100px; /* Adjust based on your design */
-  border-radius: 4px;
+  max-width: 18rem;
+  max-height: 18rem;
+  object-fit: contain;
+  border-radius: 5px;
 }
 
 .detailsRight {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  width: 70%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.detailsRight h1 {
+  font-size: var(--font-size-medium);
+  text-align: end;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  width: 100%;
+  padding: 0;
 }
 
 .price {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-button {
-  background-color: #007bff; /* Bootstrap primary color */
+.price p {
+  font-size: var(--font-size-medium);
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.counts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price button {
+  background-color: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 8px 12px;
+  border-radius: 5px;
+  padding: 8px;
   cursor: pointer;
   margin: 4px 0;
   transition: background-color 0.3s ease;
 }
 
-button:disabled {
+.price button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.price button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-button:hover:not(:disabled) {
-  background-color: #0056b3; /* Darker blue on hover */
+.delete {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete:hover {
+  background-color: var(--danger-hover-color);
 }
 
 span {
   margin: 0 8px;
-  font-size: 16px;
+  font-size: var(--font-size-small);
   font-weight: bold;
 }
 
-p {
-  margin: 10px 0;
+.cart p {
+  margin: 20px 0;
+  font-size: var(--font-size-medium);
+  font-weight: bold;
 }
 
 .checkoutButton {
-  background-color: #28a745; /* Bootstrap success color */
+  background-color: var(--success-color);
+  margin: 2.5rem 0;
   padding: 10px 15px;
   font-size: 18px;
   color: white;
@@ -74,5 +162,56 @@ p {
 }
 
 .checkoutButton:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: var(--success-hover-color);
+}
+
+@media (max-width: 768px) {
+  .cart {
+    height: 100%;
+    width: 100vw;
+  }
+
+  .itemCardContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    width: 100vw;
+    height: 100%;
+  }
+
+  .detailsLeft {
+    width: 100%;
+    height: auto;
+  }
+
+  .detailsRight {
+    width: 100%;
+    align-items: center;
+  }
+
+  .detailsRight h1 {
+    font-size: var(--font-size-medium);
+    padding: 0;
+    -webkit-line-clamp: 2;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .price p {
+    align-items: center;
+    font-size: var(--font-size-medium);
+    margin-top: 0;
+  }
+
+  .checkoutButton {
+    width: 200px;
+    margin: 20px auto 0;
+    margin-bottom: 30px;
+    font-size: var(--font-size-medium);
+  }
+
+  .counts {
+    justify-content: center;
+  }
 }

@@ -6,13 +6,17 @@ import styles from "./App.module.css";
 
 function App() {
   return (
-    <MyProvider>
-      <div className={styles.navBar}>
-        <NavBar />
-      </div>
-      <RoutesWrapper />
-      <Footer />
-    </MyProvider>
+    <div className={styles.app}>
+      <MyProvider>
+        <div className={styles.navBar}>
+          <NavBar />
+        </div>
+        <div className={styles.routes}>
+          <RoutesWrapper />
+        </div>
+        <Footer />
+      </MyProvider>
+    </div>
   );
 }
 

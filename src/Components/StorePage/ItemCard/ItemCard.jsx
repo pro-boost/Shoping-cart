@@ -18,12 +18,12 @@ function ItemCard() {
 
   return (
     <div className={styles.itemCardContainer}>
-      <h1>{product.title}</h1>
       <div className={styles.productDetails}>
         <div className={styles.detailsLeft}>
           <img src={product.image} alt={product.title} />
         </div>
         <div className={styles.detailsRight}>
+          <h1>{product.title}</h1>
           <p>{product.description}</p>
           <p className={styles.price}>{product.price} $</p>
           <button

@@ -1,11 +1,8 @@
-:root {
-  --navbar-height: 80px;
-}
-
-html,
-body {
+.app {
   height: 100vh;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .navBar {
@@ -13,14 +10,19 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--navbar-height);
+  height: 80px;
   z-index: 1000;
   box-shadow: inset;
 }
 
 .routes {
+  flex: 1;
+  padding-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: calc(var(--navbar-height));
+}
+
+footer {
+  flex-shrink: 0;
 }
