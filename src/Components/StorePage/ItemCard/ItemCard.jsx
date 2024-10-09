@@ -1,11 +1,12 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../../../ShopContext";
+import AddToCartToast from "../../PopUps/AddToCartToast";
 import styles from "./ItemCard.module.css";
 
 function ItemCard() {
   const { id } = useParams();
-  const { product, products, setProduct, handleClick } =
+  const { product, products, setProduct, handleClick, showToast } =
     useContext(ShopContext);
 
   useEffect(() => {
@@ -33,6 +34,7 @@ function ItemCard() {
           </button>
         </div>
       </div>
+      {showToast && <AddToCartToast />}
     </div>
   );
 }

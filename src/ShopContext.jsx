@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { createContext, useState, useEffect } from "react";
 
 export const ShopContext = createContext();
@@ -9,6 +10,22 @@ export const MyProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [counts, setCounts] = useState([]);
+  const [showToast, setShowToast] = useState(false);
+  const [showDeleteToast, setShowDeleteToast] = useState(false);
+
+  const handleDeleteToast = () => {
+    setShowDeleteToast(true);
+    setTimeout(() => {
+      setShowDeleteToast(false);
+    }, 3000);
+  };
+
+  const handleToast = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
+  };
 
   const handleClick = (productToAdd) => {
     setCart((prevCart) => {
@@ -29,6 +46,7 @@ export const MyProvider = ({ children }) => {
 
     setCount((prevCount) => prevCount + 1);
     setIsEmpty(false);
+    handleToast();
   };
 
   const handleDelete = (productId) => {
@@ -38,7 +56,6 @@ export const MyProvider = ({ children }) => {
       if (indexToRemove < 0) return prevCart;
 
       const countToRemove = counts[indexToRemove];
-
       const updatedCounts = [...counts];
       updatedCounts.splice(indexToRemove, 1);
 
@@ -50,6 +67,7 @@ export const MyProvider = ({ children }) => {
 
       return updatedCart;
     });
+    handleDeleteToast();
   };
 
   useEffect(() => {
@@ -80,8 +98,18 @@ export const MyProvider = ({ children }) => {
         handleDelete,
         counts,
         setCounts,
+        showToast,
+        setShowToast,
+        handleToast,
+        showDeleteToast,
       }}>
       {children}
     </ShopContext.Provider>
   );
 };
+
+MyProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default MyProvider;

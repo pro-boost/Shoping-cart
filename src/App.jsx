@@ -3,6 +3,7 @@ import NavBar from "./Components/NavBar/NavBar.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 import RoutesWrapper from "./RoutesWrapper.jsx";
 import styles from "./App.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

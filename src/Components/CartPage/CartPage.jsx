@@ -1,9 +1,19 @@
 import styles from "./CartPage.module.css";
 import { useContext } from "react";
 import { ShopContext } from "../../ShopContext";
+import CheckoutToast from "../PopUps/CheckoutToast";
+import DeleteToast from "../PopUps/DeleteToast";
 
 function CartPage() {
-  const { cart, counts, setCounts, handleDelete } = useContext(ShopContext);
+  const {
+    cart,
+    counts,
+    setCounts,
+    handleDelete,
+    handleToast,
+    showToast,
+    showDeleteToast,
+  } = useContext(ShopContext);
 
   const updateCount = (index, increment) => {
     setCounts((prevCounts) => {
@@ -54,8 +64,12 @@ function CartPage() {
           </div>
         </div>
       ))}
-      <p>Total: {totalPrice}$</p>
-      <button className={styles.checkoutButton}>Checkout</button>
+      <p>Total: {totalPrice.toFixed(2)}$</p>
+      <button onClick={handleToast} className={styles.checkoutButton}>
+        Checkout
+      </button>
+      {showToast && <CheckoutToast />}
+      {showDeleteToast && <DeleteToast />}
     </div>
   );
 }

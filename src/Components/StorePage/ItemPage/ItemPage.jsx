@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { ShopContext } from "../../../ShopContext";
 import { useParams, Link } from "react-router-dom";
+import AddToCartToast from "../../PopUps/AddToCartToast";
 import styles from "./ItemPage.module.css";
 
 function ItemPage() {
-  const { handleClick, products } = useContext(ShopContext);
+  const { handleClick, products, showToast } = useContext(ShopContext);
   const { category } = useParams();
 
   if (products.length === 0) return <p>Loading...</p>;
@@ -30,6 +31,7 @@ function ItemPage() {
             </button>
           </div>
         ))}
+      {showToast && <AddToCartToast />}
     </div>
   );
 }
