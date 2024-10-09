@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { ShopContext } from "../../ShopContext";
 
 function CartPage() {
-  const { cart, counts, setCounts } = useContext(ShopContext);
+  const { cart, counts, setCounts, handleDelete } = useContext(ShopContext);
 
   const updateCount = (index, increment) => {
     setCounts((prevCounts) => {
@@ -22,7 +22,7 @@ function CartPage() {
   return (
     <div className={styles.cart}>
       {cart.map((item, index) => (
-        <div key={index} className={styles.itemCardContainer}>
+        <div key={item.id} className={styles.itemCardContainer}>
           <div className={styles.detailsLeft}>
             <img src={item.image} alt={item.title} />
           </div>
@@ -40,7 +40,17 @@ function CartPage() {
                 <button onClick={() => updateCount(index, 1)}>+</button>
               </div>
             </div>
-            <button className={styles.delete}>Delete Item</button>
+            <button
+              onClick={() => handleDelete(item.id)}
+              className={styles.delete}>
+              Delete Item
+              <svg
+                className={styles.icon}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512">
+                <path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z" />
+              </svg>
+            </button>
           </div>
         </div>
       ))}

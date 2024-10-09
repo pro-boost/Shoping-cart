@@ -34,3 +34,29 @@
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+.active-link {
+  font-weight: bold; /* Optional: makes the active link bold */
+  font-size: 24px;
+}
+
+.active-icon {
+  color: rgb(11, 0, 0); /* Change to your desired active color */
+  font-size: 24px; /* Adjust the size as needed */
+}
+
+.count {
+  position: absolute;
+  top: -8px; /* Adjust this value to move it up */
+  right: -20px; /* Adjust this value to move it to the right */
+  background-color: rgb(205, 0, 0); /* Badge background color */
+  color: white; /* Text color */
+  border-radius: 50%; /* Make it circular */
+  padding: 4px 6px; /* Adjust padding for better fit */
+  font-size: 12px; /* Font size */
+  font-weight: bold; /* Font weight */
+  width: 20px; /* Fixed width for consistency */
+  height: 20px; /* Fixed height for consistency */
+  display: flex; /* Center content */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}

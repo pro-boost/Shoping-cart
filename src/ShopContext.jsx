@@ -17,42 +17,36 @@ export const MyProvider = ({ children }) => {
       );
 
       if (existingProductIndex >= 0) {
-        // If the product already exists in the cart, just increase the count
         const newCounts = [...counts];
         newCounts[existingProductIndex] += 1;
         setCounts(newCounts);
-        return prevCart; // Don't add again, just return the existing cart
+        return prevCart;
       } else {
-        // Add new product to the cart and initialize its count
         setCounts((prevCounts) => [...prevCounts, 1]);
         return [...prevCart, productToAdd];
       }
     });
 
-    // Update count and isEmpty
     setCount((prevCount) => prevCount + 1);
     setIsEmpty(false);
   };
 
   const handleDelete = (productId) => {
     setCart((prevCart) => {
-      const updatedCart = prevCart.filter((item) => item.id !== productId);
-
-      // Get index of the deleted product
       const indexToRemove = prevCart.findIndex((item) => item.id === productId);
 
-      if (indexToRemove >= 0) {
-        setCounts((prevCounts) =>
-          prevCounts.filter((_, index) => index !== indexToRemove)
-        );
-      }
+      if (indexToRemove < 0) return prevCart;
 
-      // Check if the cart is now empty
-      const newIsEmpty = updatedCart.length === 0;
+      const countToRemove = counts[indexToRemove];
 
-      // Update count based on the deletion
-      setCount((prevCount) => Math.max(0, prevCount - 1));
-      setIsEmpty(newIsEmpty);
+      const updatedCounts = [...counts];
+      updatedCounts.splice(indexToRemove, 1);
+
+      const updatedCart = prevCart.filter((item) => item.id !== productId);
+
+      setCounts(updatedCounts);
+      setCount((prevCount) => Math.max(0, prevCount - countToRemove));
+      setIsEmpty(updatedCart.length === 0);
 
       return updatedCart;
     });

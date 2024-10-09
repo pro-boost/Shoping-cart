@@ -5,6 +5,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { ShopContext } from "../../ShopContext";
 import "./NavBar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 function NavBar() {
   const { count } = useContext(ShopContext);
@@ -59,7 +61,13 @@ function NavBar() {
               to="/cart"
               onClick={handleLinkClick}
               className={location.pathname === "/cart" ? "active-link" : ""}>
-              Cart {count}
+              <div style={{ position: "relative", display: "inline-block" }}>
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  className={location.pathname === "/cart" ? "active-icon" : ""}
+                />
+                <span className="count">{count}</span>
+              </div>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
