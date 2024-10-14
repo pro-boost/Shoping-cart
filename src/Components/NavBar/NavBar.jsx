@@ -29,7 +29,8 @@ function NavBar() {
           to="/"
           className="me-auto"
           onClick={handleLinkClick}>
-          ProBoost
+          <img src=" /Shoping-cart/images/cintre.png" alt="store" />
+          <span>ProBoost</span>
         </Navbar.Brand>
         <Navbar.Toggle
           onClick={handleToggle}

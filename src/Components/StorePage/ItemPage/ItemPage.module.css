@@ -5,11 +5,12 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  justify-content: center;
 }
+
 h1::first-letter {
   text-transform: uppercase;
 }
+
 .cardContainer {
   overflow: hidden;
   width: 350px;
@@ -41,9 +42,9 @@ h1::first-letter {
   text-align: center;
   color: black;
   overflow: hidden;
-  white-space: nowrap; /* Prevent wrapping */
-  text-overflow: ellipsis; /* Show ellipsis */
-  width: 300px; /* Take full width of the container */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 300px;
 }
 
 .itemButton {

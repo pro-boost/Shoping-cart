@@ -64,10 +64,12 @@ function CartPage() {
           </div>
         </div>
       ))}
-      <p>Total: {totalPrice.toFixed(2)}$</p>
-      <button onClick={handleToast} className={styles.checkoutButton}>
-        Checkout
-      </button>
+      <div className={styles.checkout}>
+        <p>Total: {totalPrice.toFixed(2)}$</p>
+        <button onClick={handleToast} className={styles.checkoutButton}>
+          Checkout
+        </button>
+      </div>
       {showToast && <CheckoutToast />}
       {showDeleteToast && <DeleteToast />}
     </div>
