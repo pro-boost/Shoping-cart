@@ -1,20 +1,85 @@
 # Online Shop Project
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [API Integration](#api-integration)
+- [Technologies Used](#technologies-used)
+- [Demo](#demo)
+- [Future Improvements](#future-improvements)
+- [Credits](#credits)
+- [License](#license)
+
 ## Overview
 
-Welcome to the Online Shop Project! This application is designed to simulate an e-commerce experience using React. The project demonstrates fundamental concepts of React, component structure, state management, and user interactions through a fully functional shopping cart.
+The **Online Shop Project** is a React-based web application that simulates an e-commerce shopping experience. It demonstrates key React concepts such as component-based architecture, state management, routing, and interaction with external APIs. Users can browse products, add items to a cart, and adjust quantities before proceeding to checkout.
 
 ## Features
 
-- **Homepage**: A welcoming interface with images and general information about the shop.
-- **Shop Page**: Displays a list of products fetched from the FakeStore API, complete with product titles, images, and prices.
-- **Shopping Cart**: Users can add items to the cart, adjust quantities, and see a real-time update of their cart total.
-- **Navigation Bar**: A consistent navigation bar is present on both pages, showing the number of items in the cart and providing easy access to the checkout page.
+- **Home Page**:
+
+  - A welcoming page with images and general information about the shop.
+  - Simple design to introduce users to the shop and navigation.
+
+- **Shop Page**:
+
+  - Displays a list of categories fetched from the [FakeStore API](https://fakestoreapi.com/).
+  - Each category contains a list of products presented in cards for a more refined shopping experience.
+  - Each product is presented in individual cards, showing the title, image, and price.
+  - Includes an “Add To Cart” button for easy shopping.
+
+- **Shopping Cart**:
+
+  - Shows a real-time summary of items added to the cart.
+  - Users can modify the quantity of products from the cart.
+  - A navigation bar displays the current number of items in the cart.
+
+- **Navigation Bar**:
+
+  - Present on all pages.
+  - Displays the number of items currently in the cart.
+  - Provides easy access to the cart for checkout.
+
+- **Responsive Design**:
+  - Fully responsive layout ensuring usability across a variety of devices.
+
+## API Integration
+
+- **FakeStore API**:  
+  Product data such as titles, prices, and images are fetched from the [FakeStore API](https://fakestoreapi.com/), providing a realistic set of products for the shop.
 
 ## Technologies Used
 
-- **React**: For building the user interface and managing state.
-- **React Router**: For navigation between the home and shop pages.
-- **CSS Modules**: For modular and scoped styling.
-- **FakeStore API**: To fetch product data dynamically.
-- **React Testing Library**: For unit and integration testing of components.
+- **React**: JavaScript library for building user interfaces.
+- **React Router**: For handling page navigation.
+- **React Context**: For state management across components.
+- **CSS Modules**: For styling components in a modular way.
+- **Bootstrap**: For styling the navigation bar and enhancing the overall design.
+- **FakeStore API**: To fetch dynamic product data.
+
+## Demo
+
+![Demo Screenshot 1](./public/images/1.jpeg)  
+![Demo Screenshot 2](./public/images/2.jpeg)  
+![Demo Screenshot 3](./public/images/3.jpeg)  
+![Demo Screenshot 4](./public/images/4.jpeg)
+
+These screenshots showcase the different pages of the store, highlighting the three main categories, the products display, the cart page with some products added to it, and the responsive layout for small screens.
+
+## Future Improvements
+
+- Add checkout and payment functionality.
+- Improve UI/UX design with more animations and feedback.
+- Implement user authentication to save carts for different users.
+- Add React Testing for writing unit and integration tests.
+
+## Credits
+
+- This project was developed as part of a course assignment from **The Odin Project**.
+- This application utilizes resources from the **FakeStore API** for product data and **React Testing Library** for testing components.
+
+## License
+
+This project is licensed under the **MIT License**.
+©2024 Pro-boost. All rights reserved.
