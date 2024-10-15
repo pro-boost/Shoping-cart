@@ -60,12 +60,9 @@ The **Online Shop Project** is a React-based web application that simulates an e
 
 ## Demo
 
-![Demo Screenshot 1](./public/images/1.jpeg)  
-![Demo Screenshot 2](./public/images/2.jpeg)  
-![Demo Screenshot 3](./public/images/3.jpeg)  
-![Demo Screenshot 4](./public/images/4.jpeg)
+![Demo Screenshot 1](./public/images/1.jpeg)
 
-These screenshots showcase the different pages of the store, highlighting the three main categories, the products display, the cart page with some products added to it, and the responsive layout for small screens.
+This screenshot showcases the store page, highlighting the three main categories and the cart icon in the navigation bar, with some products added to the cart.
 
 ## Future Improvements
 
